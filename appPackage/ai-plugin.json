@@ -1,0 +1,55 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+  "schema_version": "v2.1",
+  "namespace": "ilristorante",
+  "name_for_human": "Il Ristorante",
+  "description_for_human": "See the today's menu and place orders",
+  "description_for_model": "Plugin for getting the today's menu, optionally filtered by course and allergens, and placing orders",
+  "functions": [
+    {
+      "name": "getDishes",
+      "description": "Returns information about the dishes on the menu. Can filter by course (breakfast, lunch or dinner), name, allergens, or type (dish, drink).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.dishes",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.description"
+          }
+        }
+      }
+    },
+    {
+      "name": "placeOrder",
+      "description": "Places an order and returns the order details",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.order_id",
+            "subtitle": "$.total_price"
+          }
+        }
+      }
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "None"
+      },
+      "spec": {
+        "url": "apiSpecificationFile/ristorante.yml"
+      },
+      "run_for_functions": [
+        "getDishes",
+        "placeOrder"
+      ]
+    }
+  ],
+  "capabilities": {
+    "localization": {},
+    "conversation_starters": []
+  }
+}
