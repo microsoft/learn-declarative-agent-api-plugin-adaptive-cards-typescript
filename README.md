@@ -2,7 +2,7 @@
 
 ## Summary
 
-This is a starter project for the **Use Adaptive Cards to show data in API plugins for declarative agents** learn module. The module teaches you how to use Adaptive Cards to present information that a declarative agent retrieves from an API using an API plugin.
+This is a starter project for the [**Use Adaptive Cards to show data in API plugins for declarative agents**](https://learn.microsoft.com/training/modules/copilot-declarative-agent-action-api-plugin-adaptive-cards-vsc/) learn module. The module teaches you how to use Adaptive Cards to present information that a declarative agent retrieves from an API using an API plugin.
 
 ![Declarative agent showing what's on the menu for lunch](./assets/screenshot-menu.png)
 ![Declarative agent ordering lunch](./assets/screenshot-order.png)
